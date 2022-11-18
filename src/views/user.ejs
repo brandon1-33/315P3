@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<head>
+   <link rel="stylesheet" href="\css\default.css" type="text/css">
+   <script src="\\wsl.localhost\Ubuntu\home\alex9947\CSCE_315\315Project3-main\315Project3-main\public\js\index.js"></script>
+   <title>Server POS</title> 
+</head>
+<body>
+   <script>
+      
+      let ord = { base: "", protein: "", dressing: "", extra: "", price: 7.69};
+
+      function grainBowl() { 
+         ord.base = "Grain Bowl"; 
+      } 
+
+      function salad() { 
+         ord.base = "Salad"; 
+      } 
+
+      function pita() { 
+         ord.base = "Pita"; 
+      } 
+
+      function greens() { 
+         ord.base = "Greens & Grains"; 
+      } 
+
+      function gyro() { 
+         ord.protein = "Gyro"; 
+      } 
+
+      function falafel() { 
+         ord.protein = "Falafel"; 
+      } 
+
+      function meatballs() { 
+         ord.protein = "Meatballs"; 
+      } 
+
+      function chicken() { 
+         ord.protein = "Chicken"; 
+      } 
+
+      function vegmed() { 
+         ord.protein = "Veg Medley"; 
+      } 
+
+      function hummus() {  
+         ord.dressing = "Hummus"; 
+      } 
+
+      function rphummus() {  
+         ord.dressing = "Red Pepper Hummus"; 
+      } 
+
+      function jalafeta() {  
+         ord.dressing = "Jalapeno Feta"; 
+      } 
+
+      function tza() {  
+         ord.dressing = "Tzatziki"; 
+      } 
+
+      function grev() {  
+         ord.dressing = "Green Vinaigrette"; 
+      } 
+
+      function harissayo() {  
+         ord.dressing = "Harissa Yogurt"; 
+      } 
+
+      function lemon() {  
+         ord.dressing = "Lemon Herb Tahini"; 
+      } 
+
+      function yodill() {  
+         ord.dressing = "Yogurt Dill"; 
+      } 
+
+      function gfries() { 
+         ord.extra = "Garlic Fries"; 
+      } 
+
+      function twoF() { 
+         ord.extra = "2 Falafels"; 
+      } 
+
+      function pitaE() { 
+         ord.extra = "Pita"; 
+      } 
+
+      function fd() { 
+         ord.extra = "Fountain Drink"; 
+      } 
+
+      function vb() { 
+         ord.extra = "Vegan Box"; 
+      } 
+
+      function mana() { 
+         window.location.href = 'http://localhost:3000/manager';
+      } 
+
+      
+      function send() {
+         switch(ord.extra) {
+            case "Garlic Fries":
+                  alert("-----Receipt: -----\n" + ord.base + "\n" + ord.protein + "\n" + ord.dressing + "\n" + ord.extra + "\n" + (ord.price + 1.99));
+                  window.location.href = 'http://localhost:3000/order/gf';
+               break;
+            case "2 Falafels":
+                  alert("-----Receipt: -----\n" + ord.base + "\n" + ord.protein + "\n" + ord.dressing + "\n" + ord.extra + "\n" + (ord.price + 2.85));
+                  window.location.href = 'http://localhost:3000/order/tf';
+               break;
+            case "Pita":
+                  alert("-----Receipt: -----\n" + ord.base + "\n" + ord.protein + "\n" + ord.dressing + "\n" + ord.extra + "\n" + (ord.price + 3.50));
+                  window.location.href = 'http://localhost:3000/order/p';
+               break;
+            case "Fountain Drink":
+                  alert("-----Receipt: -----\n" + ord.base + "\n" + ord.protein + "\n" + ord.dressing + "\n" + ord.extra + "\n" + (ord.price + 1.30));
+                  window.location.href = 'http://localhost:3000/order/fd';
+               break;
+            case "Vegan Box":
+                  alert("-----Receipt: -----\n" + ord.base + "\n" + ord.protein + "\n" + ord.dressing + "\n" + ord.extra + "\n" + (ord.price + 6.49));
+                  window.location.href = 'http://localhost:3000/order/vb';
+               break;
+            }
+            window.location.href = 'http://localhost:3000/order';
+      }
+   
+   </script>
+   <h1>Server POS</h1>
+        <div class = "button-container">
+            <div class = "entree">
+                <h2> Entree </h2>
+                <button id="s" onclick="grainBowl()">Grain Bowl</button>
+                <button id="s" onclick="salad()">Salad</button>
+                <button id="s" onclick="pita()">Pita</button>
+                <button id="s" onclick="greens()">Greens & Grains</button> 
+                
+            
+            </div>
+
+            <div class = "protein">
+                <h2> Protein </h2> 
+                <button id="s" onclick="gyro()">Gyro</button>
+                <button id="s" onclick="falafel()">Falafel</button>
+                <button id="s" onclick="meatballs()">Meatballs</button>
+                <button id="s" onclick="chicken()">Chicken</button>
+                <button id="s" onclick="vegmed()">Veg Medley</button>
+            </div>
+
+            <div class = "dressing">
+                <h2> Dressing </h2>
+                <button id="s" onclick="hummus()">Hummus</button>
+                <button id="s" onclick="rphummus()">Red Pepper Hummus</button>
+                <button id="s" onclick="jalafeta()">Jalapeno Feta</button>
+                <button id="s" onclick="tza()">Tzatziki</button>
+                <button id="s" onclick="grev()">Green Vinaigrette</button>
+                <button id="s" onclick="harissayo()">Harissa Yogurt</button>
+                <button id="s" onclick="lemon()">Lemon Herb Tahini</button>
+                <button id="s" onclick="yodill()">Yogurt Dill</button> 
+            </div>
+
+            <div class = "extra">
+                <h2> Extra </h2> 
+                <button id="s" onclick="gfries()">Garlic Fries</button>
+                <button id="s" onclick="twoF()">2 Falafels</button>
+                <button id="s" onclick="pitaE()">Pita</button>
+                <button id="s" onclick="fd()">Fountain Drink</button>
+                <button id="s" onclick="vb()">Vegan Box</button>
+            </div>
+
+            <div class = "order">
+                <button id="s" onclick="send()">Order</button>
+                <button id="s" onclick="mana()">Manager View</button>
+            </div>
+
+
+        </div>
+  
+</body>
